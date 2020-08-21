@@ -1,3 +1,4 @@
+@auth
 <h3 class="font-bold text-xl mb-4">Following</h3>
 
 <ul clas="mb-4">
@@ -13,3 +14,4 @@
     </li>
     @endforeach
 </ul>
+@endauth
