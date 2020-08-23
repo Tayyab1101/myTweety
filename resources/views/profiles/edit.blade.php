@@ -1,5 +1,5 @@
 <x-app>
-    <form action="{{$user->path()}}" method="POST" enctype="multipart/form-data">
+    <form action="{{ $user->path() }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
@@ -8,10 +8,10 @@
                 Name
             </label>
 
-            <input type='text' class='border border-gray-400 p-2 w-full' name='name' id='name' value="{{$user->name}}"
+            <input type='text' class='border border-gray-400 p-2 w-full' name='name' id='name' value="{{ $user->name }}"
                 required>
             @error('name')
-            <p class='text-red-500 text-xs mt-2'>{{$message}}</p>
+            <p class='text-red-500 text-xs mt-2'>{{ $message }}</p>
             @enderror
         </div>
 
@@ -21,10 +21,10 @@
             </label>
 
             <input type='text' class='border border-gray-400 p-2 w-full' name='username' id='username'
-                value="{{$user->username}}" required>
+                value="{{ $user->username }}" required>
             @error('username')
 
-            <p class='text-red-500 text-xs mt-2'>{{$message}}</p>
+            <p class='text-red-500 text-xs mt-2'>{{ $message }}</p>
             @enderror
         </div>
 
@@ -34,14 +34,14 @@
             </label>
 
             <div class="flex">
-                <input type='file' class='border border-gray-100 p-2 w-full' name='avatar' id='avatar' required>
-                <img src="{{$user->avatar}}" class="border border-gray-400" alt="Your Avatar" style="width:50px;height:50px;max-width: 50px;
+                <input type='file' class='border border-gray-100 p-2 w-full' name='avatar' id='avatar'>
+                <img src="{{ $user->avatar }}" class="border border-gray-400" alt="Your Avatar" style="width:50px;height:50px;max-width: 50px;
     max-height: 50px;
     object-fit: cover;">
             </div>
 
             @error('avatar')
-            <p class='text-red-500 text-xs mt-2'>{{$message}}</p>
+            <p class='text-red-500 text-xs mt-2'>{{ $message }}</p>
             @enderror
         </div>
 
@@ -52,10 +52,10 @@
             </label>
 
             <input type='email' class='border border-gray-400 p-2 w-full' name='email' id='email'
-                value="{{$user->email}}" required>
+                value="{{ $user->email }}" required>
             @error('email')
 
-            <p class='text-red-500 text-xs mt-2'>{{$message}}</p>
+            <p class='text-red-500 text-xs mt-2'>{{ $message }}</p>
             @enderror
         </div>
 
@@ -67,7 +67,7 @@
             <input type='password' class='border border-gray-400 p-2 w-full' name='password' id='password' required>
             @error('password')
 
-            <p class='text-red-500 text-xs mt-2'>{{$message}}</p>
+            <p class='text-red-500 text-xs mt-2'>{{ $message }}</p>
             @enderror
         </div>
 
@@ -80,14 +80,15 @@
                 id='password_confirmation' required>
             @error('password_confirmation')
 
-            <p class='text-red-500 text-xs mt-2'>{{$message}}</p>
+            <p class='text-red-500 text-xs mt-2'>{{ $message }}</p>
             @enderror
         </div>
 
         <div class="mb-6">
-            <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
+            <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4">
                 Submit
             </button>
+            <a href="{{ $user->path() }}" class="hover:underline">Cancel</a>
         </div>
 
     </form>
