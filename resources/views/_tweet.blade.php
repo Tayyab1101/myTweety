@@ -1,7 +1,9 @@
-<div class="flex p-4 border-b border-gray-400">
+<div class="flex p-4 {{$loop->last ? '' : 'border-b border-gray-400'}}">
     <div class="mr-2 flex-shrink-0">
         <a href="{{route('profile',$tweet->user)}}">
-            <img src="https://picsum.photos/seed/{{$tweet->user->email}}/50" alt="" class="rounded-full mr-2">
+            <img src="{{$tweet->user->avatar}}" alt="" class="rounded-full mr-2" style="width:40px;height:40px;max-width: 40px;
+            max-height: 40px;
+            object-fit: cover;">
         </a>
     </div>
     <div>

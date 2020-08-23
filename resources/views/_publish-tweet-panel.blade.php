@@ -6,7 +6,9 @@
         <hr class="my-4">
 
         <footer class="flex justify-between">
-            <img src="{{auth()->user()->avatar}}" alt="Your Avatar" class="rounded-full mr-2">
+            <img src="{{auth()->user()->avatar}}" alt="Your Avatar" class="rounded-full mr-2" style="width:50px;height:50px;max-width: 50px;
+            max-height: 50px;
+            object-fit: cover;">
 
             <button type="submit" class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white">Tweet-a-roo!</button>
         </footer>
